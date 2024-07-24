@@ -1,0 +1,30 @@
+.nabarholder
+{
+    width: 70rem;
+    height: 6rem;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5rem;
+    padding-right: 5rem;
+
+    .logoimage
+    {
+        width: 10rem;
+        height: 7rem;
+    }
+    .listcontent
+    {
+   .contentli
+   {
+    display: flex;
+    flex-direction: row;
+    color: #000000;
+    list-style: none;
+    gap: 2rem;
+   }
+    }
+
+}
