@@ -1,7 +1,11 @@
+
+.superContainer{
+width:100%;
+height: 4rem;
+position: fixed;
+margin: 0;
 .nabarholder
 {
-    width: 70rem;
-    height: 6rem;
     background-color: white;
     display: flex;
     flex-direction: row;
@@ -13,7 +17,7 @@
     .logoimage
     {
         width: 10rem;
-        height: 7rem;
+        height: 5rem;
     }
     .listcontent
     {
@@ -23,8 +27,8 @@
     flex-direction: row;
     color: #000000;
     list-style: none;
-    gap: 2rem;
+    gap: 1rem;
    }
     }
-
+}
 }
