@@ -48,8 +48,6 @@ const WordByWordWriter = ({ text, speed, pause }) => {
 
   return <div>{displayedText}</div>;
 };
-
-// Usage example
 const Writer = () => {
   const text = [
     "E-learning Platform",
