@@ -1,5 +1,5 @@
-import React from 'react'
-import '../styles/landing.scss'
+import React from 'react';
+import '../styles/landing.scss';
 import Writer from './Writer';
 function Landing() {
   return (
