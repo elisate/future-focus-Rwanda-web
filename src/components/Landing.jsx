@@ -6,7 +6,7 @@ function Landing() {
   const courses = [
     {
       courseImage: "../../public/C1.jpeg",
-      buttonTitle: "Coding", // Corrected typo here
+      buttonTitle: "Coding", 
     },
     {
       courseImage: "../../public/R1.jpeg",
