@@ -14,7 +14,7 @@ function Landing() {
     },
     {
       courseImage: "../../public/D1.jpeg",
-      buttonTitle: "UI/UX Design", // Corrected typo here
+      buttonTitle: "UI/UX Design", 
     },
    
   ];
