@@ -1,6 +1,7 @@
 .landingContainer
 {
-  width: 100%;
+  background-color: white;
+ 
     .landSectiona
     {
   background-image: url('../../public/bg2.jpg'); 
@@ -8,10 +9,12 @@
   background-position: center;
   background-repeat: no-repeat; 
   height:35rem; 
-  width: 100vw; 
+  width: 98.7vw; 
   .textLa
   {
-    padding-top: 10rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 14rem;
     font-size: 2rem;
     gap: 0.2rem;
     font-weight: bold;
@@ -21,7 +24,59 @@
     justify-content: center;
     color: white;
   }
-    
-  
+  .textLb
+  {
+    color: white;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content:center;
+    padding-top: 5rem;
+    padding-left: 16rem;
+    padding-right: 16rem;
+    font-weight: 10;
+  }
+    }
+    .landSectionb
+    {
+      padding-top: 3rem;
+      padding-left: 5rem;
+      padding-right: 5rem;
+      .texta{
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .textb
+      {
+        font-size: 1.5rem;
+      }
+      .mappedCategories
+      {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 2rem;
+        div {
+    transition: transform 0.3s ease; 
+  }
+  div:hover {
+    transform: translateY(-12px); 
+     cursor: pointer;
+  }
+        .cardCourseImagea
+        {
+          padding-top: 3rem;
+          width: 20rem;
+          height: 12rem;
+        }
+        .textcarda
+        {
+          padding-top: 1rem;
+          font-size: 1.2rem;
+          font-weight:bold;
+          color: black;
+          display: flex;
+          justify-content: center;
+        }
+      }
     }
 }

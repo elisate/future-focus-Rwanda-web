@@ -1,0 +1,103 @@
+.footerContainer {
+  background-color: #111111;
+  color: #636363;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-top: 1.5rem;
+
+  .textBig {
+    font-size: 1.5rem;
+    padding-bottom: 1.5rem;
+    color: white;
+  }
+
+  .footersuperContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+    .footera {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+      .fa1 {
+        display: flex;
+        align-items: center;
+      }
+      .fa1Icon {
+        font-size: 1.3rem;
+        padding-right: 0.5rem;
+      }
+
+      .footerbold {
+        border-bottom: solid 0.3rem #636363;
+        width: 2.2rem;
+        border-radius: 2px;
+      }
+    }
+    .footera .fa1:hover {
+      color: #4f1930;
+      cursor: pointer;
+    }
+    .footerb {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+
+      .footerbold1 {
+        border-bottom: solid 0.3rem #636363;
+        width: 2.2rem;
+        border-radius: 2px;
+      }
+    }
+
+    .footerb .fa2:hover {
+      color: #4f1930;
+      cursor: pointer;
+    }
+
+    .footerc {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+      .footerbold3 {
+        border-bottom: solid 0.3rem #636363;
+        width: 2.2rem;
+        border-radius: 2px;
+      }
+      .fa3 {
+        display: flex;
+        align-items: center;
+      }
+      .fa1Icon {
+        font-size: 1.3rem;
+        padding-right: 0.5rem;
+      }
+    }
+    .footerc .fa3:hover {
+      color: #4f1930;
+      cursor: pointer;
+    }
+  }
+  .textBig {
+    font-size: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  .endFooter {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    font-size: 1.1rem;
+  }
+  hr.hrlines {
+    border: none;
+    height: 0.8px;
+    background-color: #333;
+  }
+}
