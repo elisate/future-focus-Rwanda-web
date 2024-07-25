@@ -5,15 +5,15 @@ import Writer from "./Writer";
 function Landing() {
   const courses = [
     {
-      courseImage: "../../public/C1.jpeg",
+      courseImage: "/C1.jpeg",
       buttonTitle: "Coding", 
     },
     {
-      courseImage: "../../public/R1.jpeg",
+      courseImage: "/R1.jpeg",
       buttonTitle: "Robotics", 
     },
     {
-      courseImage: "../../public/D1.jpeg",
+      courseImage: "/D1.jpeg",
       buttonTitle: "UI/UX Design", 
     },
    
