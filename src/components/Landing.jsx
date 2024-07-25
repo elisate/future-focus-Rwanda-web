@@ -10,7 +10,7 @@ function Landing() {
     },
     {
       courseImage: "../../public/R1.jpeg",
-      buttonTitle: "Robotics", // Corrected typo here
+      buttonTitle: "Robotics", 
     },
     {
       courseImage: "../../public/D1.jpeg",
