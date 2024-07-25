@@ -59,7 +59,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <hr className="hrlines" />
+      <hr className="hrlines2"/>
       <div className="endFooter">
         &copy; 2024 Future Focus Rwanda Company. All rights reserved
       </div>

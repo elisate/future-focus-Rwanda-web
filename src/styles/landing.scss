@@ -1,82 +1,97 @@
-.landingContainer
-{
+.landingContainer {
   background-color: white;
- 
-    .landSectiona
-    {
-  background-image: url('../../public/bg2.jpg'); 
-  background-size: cover; 
-  background-position: center;
-  background-repeat: no-repeat; 
-  height:35rem; 
-  width: 98.7vw; 
-  .textLa
-  {
-    padding-left: 5rem;
-    padding-right: 5rem;
-    padding-top: 14rem;
-    font-size: 2rem;
-    gap: 0.2rem;
-    font-weight: bold;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    color: white;
-  }
-  .textLb
-  {
-    color: white;
-    font-size: 1.1rem;
-    display: flex;
-    justify-content:center;
-    padding-top: 5rem;
-    padding-left: 16rem;
-    padding-right: 16rem;
-    font-weight: 10;
-  }
-    }
-    .landSectionb
-    {
-      padding-top: 3rem;
+
+  .landSectiona {
+    background-image: url("../../public/bg2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 35rem;
+    width: 98.7vw;
+    .textLa {
       padding-left: 5rem;
       padding-right: 5rem;
-      .texta{
-        font-size: 2rem;
-        font-weight: bold;
-      }
-      .textb
-      {
-        font-size: 1.5rem;
-      }
-      .mappedCategories
-      {
+      padding-top: 14rem;
+      font-size: 2rem;
+      gap: 0.2rem;
+      font-weight: bold;
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      color: white;
+    }
+    .textLb {
+      color: white;
+      font-size: 1.1rem;
+      display: flex;
+      justify-content: center;
+      padding-top: 5rem;
+      padding-left: 16rem;
+      padding-right: 16rem;
+      font-weight: 10;
+    }
+  }
+  .landSectionb {
+    padding-top: 3rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    .texta {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .textb {
+      font-size: 1.5rem;
+    }
+    .mappedCategories {
+      overflow: hidden;
+      .cardsContainer {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         padding-bottom: 2rem;
-        div {
-    transition: transform 0.3s ease; 
-  }
-  div:hover {
-    transform: translateY(-12px); 
-     cursor: pointer;
-  }
-        .cardCourseImagea
-        {
-          padding-top: 3rem;
-          width: 20rem;
-          height: 12rem;
-        }
-        .textcarda
-        {
-          padding-top: 1rem;
-          font-size: 1.2rem;
-          font-weight:bold;
-          color: black;
-          display: flex;
-          justify-content: center;
-        }
+        transition: transform 0.5s ease-in-out;
+      }
+      div {
+        transition: transform 0.3s ease;
+      }
+      div:hover {
+        transform: translateY(-12px);
+        cursor: pointer;
+      }
+      .cardCourseImagea {
+        padding-top: 3rem;
+        width: 20rem;
+        height: 12rem;
+      }
+      .textcarda {
+        padding-top: 1rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: black;
+        display: flex;
+        justify-content: center;
       }
     }
+    //pagination content
+    .pagination-controls {
+      display: flex;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    .pagination-dot {
+      height: 13px;
+      width: 13px;
+      margin: 0 5px;
+      background-color: #ea7b30;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .pagination-dot.active {
+      background-color: #4f1930;
+    }
+  }
 }
