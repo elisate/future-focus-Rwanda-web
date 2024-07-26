@@ -55,7 +55,7 @@ const Writer = () => {
     "Innovative Tech Enthusiast",
   ];
   const speed = 118; // Speed in milliseconds
-  const pause = 1010; // Pause in milliseconds between texts
+  const pause = 1010; // Pause in milliseconds
 
   return (
     <div className="writeStyle">
