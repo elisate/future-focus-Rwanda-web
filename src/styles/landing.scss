@@ -1,5 +1,7 @@
 .landingContainer {
   background-color: white;
+  height: fit-content;
+  padding-bottom: 3rem;
 
   .landSectiona {
     background-image: url("../../public/bg2.jpg");
@@ -65,11 +67,17 @@
       }
       .textcarda {
         padding-top: 1rem;
-        font-size: 1.2rem;
+
         font-weight: 500;
         color: rgb(17, 17, 17);
         display: flex;
         justify-content: center;
+      }
+      .prContent {
+        width: 18rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 1rem;
       }
     }
     //pagination content
@@ -92,6 +100,36 @@
 
     .pagination-dot.active {
       background-color: #4f1930;
+    }
+  }
+  .ctitle {
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 1.9rem;
+  }
+  .landingc {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3rem;
+    .serviceCardimage {
+      width: 20rem;
+      height: 12rem;
+    }
+    .cardDesc {
+      width: 18rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 1rem;
+    }
+    .cardTitle {
+      display: flex;
+      justify-content: center;
+      font-weight: 500;
     }
   }
 }
