@@ -104,6 +104,7 @@ function Landing() {
       cardDescription:
         "The STEM activities 100% match REB's Curriculum, we are building partnerships with different schools in region so that STEM programs gets into schools basing on Singapore's Teaching Methodology.",
     },
+    
   ];
 
   return (
@@ -112,7 +113,7 @@ function Landing() {
         <div className="textLa">
           <div>Welcome to Future Focus Rwanda</div>
           <div>
-            <Writer />
+          <div><Writer/></div>  
           </div>
         </div>
         <div className="textLb">
