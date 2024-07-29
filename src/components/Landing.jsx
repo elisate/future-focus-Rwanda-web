@@ -124,7 +124,7 @@ function Landing() {
       </div>
       <div className="landSectionb">
         <div className="texta">Future Focus Rwanda Platform</div>
-        <div className="textb">Course Categories</div>
+        <div className="textb">Program Categories</div>
 
         <div className="mappedCategories">
           <div className="cardsContainer">
