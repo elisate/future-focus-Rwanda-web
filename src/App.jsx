@@ -5,9 +5,11 @@ import Landing from "./components/Landing";
 import { BrowserRouter , Route, Routes } from "react-router-dom";
 import AboutUs from "./components/AboutUs";
 import Programs from "./components/Programs";
+import { Appcontext } from "./fetch/ContextProvider";
 
 function App() {
   return (
+    <Appcontext>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<PageSet />}>
@@ -17,6 +19,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </Appcontext>
   );
 }
 
