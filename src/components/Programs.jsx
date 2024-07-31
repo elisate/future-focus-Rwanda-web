@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/programs.scss";
 import { CgArrowLongRight } from "react-icons/cg";
 import { mycontext } from "../fetch/ContextProvider";
+import { useNavigate } from "react-router-dom";
 function Programs() {
   const programA = [
     {
@@ -37,6 +38,10 @@ function Programs() {
   ];
 
   const {program} = mycontext();
+  const navigate=useNavigate();
+  const handleNavigate=(id)=>{
+    navigate(`/sprogram/${id}`)
+  }
 
   return (
     <div className="programsContainer">
@@ -52,7 +57,13 @@ function Programs() {
               </div>
               <div className="textcardaP">{item.program_title}</div>
               <div className="prContentP">{item.programContent}</div>
-              <div className="enrollP"><span>Enroll</span><CgArrowLongRight/></div>
+              <div
+                className="enrollP"
+                onClick={() => handleNavigate(item?._id)}
+              >
+                <span>Enroll</span>
+                <CgArrowLongRight />
+              </div>
             </div>
           ))}
         </div>

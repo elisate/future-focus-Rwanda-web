@@ -6,6 +6,7 @@ import { BrowserRouter , Route, Routes } from "react-router-dom";
 import AboutUs from "./components/AboutUs";
 import Programs from "./components/Programs";
 import { Appcontext } from "./fetch/ContextProvider";
+import Programcourse from "./components/Programcourse";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route index element={<Landing />} />
           <Route element={<AboutUs/>} path="/about"/>
           <Route element={<Programs/>} path="/program"/>
+          <Route element={<Programcourse/>} path="/sprogram/:Pid"/>
         </Route>
       </Routes>
     </BrowserRouter>
