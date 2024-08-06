@@ -24,7 +24,7 @@ export const Appcontext = ({ children }) => {
     getprogram();
   }, []);
 
-  // Use `useParams` inside the component
+  
  
 
  
