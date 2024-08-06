@@ -11,16 +11,16 @@ import Programcourse from "./components/Programcourse";
 function App() {
   return (
     <Appcontext>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<PageSet />}>
-          <Route index element={<Landing />} />
-          <Route element={<AboutUs/>} path="/about"/>
-          <Route element={<Programs/>} path="/program"/>
-          <Route element={<Programcourse/>} path="/sprogram/:Pid"/>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<PageSet />}>
+            <Route index element={<Landing />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/program" element={<Programs />} />
+            <Route path="/sprogram/:Pid" element={<Programcourse />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </Appcontext>
   );
 }

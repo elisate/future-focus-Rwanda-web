@@ -1,13 +1,14 @@
-import {
-  useContext,
-  useEffect,
-  useState,
-  createContext,
-} from "react";
+import { useContext, useEffect, useState, createContext } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
+
+// Create context
 const statement = createContext();
+
 export const Appcontext = ({ children }) => {
   const [program, setProgram] = useState([]);
+  const [pcourse, setPcourse] = useState([]);
+
   useEffect(() => {
     const getprogram = async () => {
       try {
@@ -17,23 +18,22 @@ export const Appcontext = ({ children }) => {
         console.log(response.data);
         setProgram(response.data);
       } catch (err) {
-        if (err.response) {
-          console.log(err.response.data.message);
-          console.log(err.response.status);
-         console.log(err.response.headers);
-        } else {
-          console.log(program);
-          console.log("error");
-        }
+        console.log(err);
       }
     };
     getprogram();
   }, []);
 
+  // Use `useParams` inside the component
+ 
+
+ 
+
   return (
-    <statement.Provider value={{ program, setProgram }}>
+    <statement.Provider value={{ program, setProgram, pcourse, setPcourse }}>
       {children}
     </statement.Provider>
   );
 };
+
 export const mycontext = () => useContext(statement);
