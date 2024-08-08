@@ -29,9 +29,12 @@ function Navbar() {
           </ul>
         </div>
         <div>
-          <button type="submit" className="buttonFix">
-            SIGN IN
-          </button>
+          <Link to="/login">
+            {" "}
+            <button type="submit" className="buttonFix">
+              SIGN IN
+            </button>
+          </Link>
         </div>
       </div>
     </div>
