@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState, createContext } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+
 
 // Create context
 const statement = createContext();
