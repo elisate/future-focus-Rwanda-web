@@ -26,7 +26,7 @@ const navigate = useNavigate();
       formData.append("password", password);
 
       const res = await axios.post(
-        "http://localhost:5000/user/register",
+        "https://future-focus-rwanada-1.onrender.com/user/register",
         formData,
         {
           headers: {

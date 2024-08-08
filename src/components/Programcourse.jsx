@@ -12,7 +12,7 @@ function Programcourse() {
     const singleProgram = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/program/getProgramById/${Pid}`
+          `https://future-focus-rwanada-1.onrender.com/program/getProgramById/${Pid}`
         );
         console.log(res.data);
         setProgram(res.data);
@@ -27,7 +27,7 @@ function Programcourse() {
     const getprogramCourse = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/program/getProgramWithCourses/${Pid}`
+          `https://future-focus-rwanada-1.onrender.com/program/getProgramWithCourses/${Pid}`
         );
         console.log(response.data);
         setPcourse(response.data.courses || []);
