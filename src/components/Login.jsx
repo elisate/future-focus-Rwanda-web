@@ -34,6 +34,7 @@ function Login() {
           },
         }
       );
+       localStorage.setItem("userToken", JSON.stringify(res.data));
 
       navigate("/landing");
     } catch (error) {
@@ -47,7 +48,7 @@ function Login() {
           <div>
             <img src="logo_official.png" className="headerLogo" alt="Logo" />
           </div>
-          <div className="title">Welcome Back !!!</div>
+          <div className="title">Welcome Back User!!!</div>
         </div>
 
         <div className="formGroup">

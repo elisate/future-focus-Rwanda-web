@@ -13,7 +13,7 @@ export const Appcontext = ({ children }) => {
     const getprogram = async () => {
       try {
         const response = await axios.get(
-          "https://future-focus-rwanada-1.onrender.com/program/getPrograms"
+          "http://localhost:5000/program/getPrograms"
         );
         console.log(response.data);
         setProgram(response.data);

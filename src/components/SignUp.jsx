@@ -50,7 +50,7 @@ const navigate = useNavigate();
             <div>
               <img src="logo_official.png" className="headerLogo" alt="Logo" />
             </div>
-            <div className="title">Create Your Profile</div>
+            <div className="title">Create Your Profile To FFR System</div>
           </div>
 
           <div className="formRow">

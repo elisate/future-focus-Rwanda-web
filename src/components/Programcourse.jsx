@@ -12,7 +12,7 @@ function Programcourse() {
     const singleProgram = async () => {
       try {
         const res = await axios.get(
-          `https://future-focus-rwanada-1.onrender.com/program/getProgramById/${Pid}`
+          `http://localhost:5000/program/getProgramById/${Pid}`
         );
         console.log(res.data);
         setProgram(res.data);
@@ -27,7 +27,7 @@ function Programcourse() {
     const getprogramCourse = async () => {
       try {
         const response = await axios.get(
-          `https://future-focus-rwanada-1.onrender.com/program/getProgramWithCourses/${Pid}`
+          `http://localhost:5000/program/getProgramWithCourses/${Pid}`
         );
         console.log(response.data);
         setPcourse(response.data.courses || []);
@@ -39,39 +39,28 @@ function Programcourse() {
   }, [Pid]);
 
   return (
-    <div className="programCourseContainer">
-      <div className="cardPrograms">
-        <h3><b>Program Details</b></h3>
-        <div>
-          <img
-            src={program.images}
-            alt="Program image"
-            className="single_image"
-          />
-        </div>
-        <div>{program?.program_title}</div>
+    <div className="allPrograms">
+      <div
+        className="background-image"
+        style={{
+          backgroundImage: `url(${program.images})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          height: "80vh",
+          width: "100%",
+        }}
+      >
+        <div className="programatitle" >{program?.program_title}</div>
+        <div className="endriver"><button type="submit" className="enrollbutton">enroll</button></div>
       </div>
-      <h1>Courses Related to the Program</h1>
-      <div className="courses">
-        {pcourse?.map((item, index) => (
-          <div key={index}>
-            <div>
-              {<img src={item.images} alt="Course" className="images" />}
-            </div>
-            <div>{item.courseTitle}</div>
-            <div>{item.courseContent}</div>
-            <div>
-
-               
-                    <video controls>
-                      <source src={item.videos} type="video/mp4" />
-                    </video>
-            </div>
-            <div>
-              <a href={item.documents}>document</a>
-            </div>
-          </div>
-        ))}
+      <div className="programCourseContainer">
+        <div className="cardPrograms">
+          <h3>
+            <b>Program Details</b>
+          </h3>
+         
+        </div>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import '../styles/navbar.scss';
 import '../styles/button.scss';
 import '../../src/App.scss';
 import { Link } from 'react-router-dom';
+import Status_loged from './Status_loged';
 function Navbar() {
   return (
     <div className="superContainer">
@@ -29,12 +30,10 @@ function Navbar() {
           </ul>
         </div>
         <div>
-          <Link to="/login">
-            {" "}
-            <button type="submit" className="buttonFix">
-              SIGN IN
-            </button>
-          </Link>
+
+           
+            <Status_loged/>
+   
         </div>
       </div>
     </div>
