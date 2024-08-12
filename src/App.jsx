@@ -10,8 +10,9 @@ import Programcourse from "./components/Programcourse";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import StudentRegistration from "./components/StudentRegistration";
-import UserDashboard from "./components/userDashboard";
 import ViewCourse from "./components/ViewCourse";
+import UserDashboard from "./components/Userview";
+
 
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
               path="/studentregistration/:Pid"
               element={<StudentRegistration />}
             />
-            <Route path="/studentCourse" element={<UserDashboard />} />
+            <Route path="/studentCourse" element={<UserDashboard/>} />
             <Route path="/viewCourse/:courseId" element={<ViewCourse />} />
             
           </Route>
