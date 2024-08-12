@@ -8,14 +8,17 @@ function Profile() {
   }
 
   return (
-    <div className="overlay">
-      <div className="profile">
-        <Link to="/StudentCourse">
-          <div>Dashboard</div>
-        </Link>
-        <div>Account</div>
-        <div>Support</div>
-        <div onClick={Logout}>Sign out</div>
+    <div className="fixe_profile">
+      {" "}
+      <div className="overlayProfile">
+        <div className="profile">
+          <Link to="/StudentCourse">
+            <div>Dashboard</div>
+          </Link>
+          <div>Account</div>
+          <div>Support</div>
+          <div onClick={Logout}>Sign out</div>
+        </div>
       </div>
     </div>
   );

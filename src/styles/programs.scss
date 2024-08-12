@@ -14,61 +14,55 @@
   .mappedProgramsP {
     padding-left: 5rem;
     padding-right: 5rem;
-   
-    
+
     .cardsContainerp {
       display: flex;
       flex-wrap: wrap; /* This line enables wrapping */
       gap: 4.3rem;
       padding-top: 2rem;
-    .cardProgram{
-      
-        .cardCourseImageaP {
-        width: 20rem;
-        height: 12rem;
-        box-sizing: border-box;
-      }
-      .textcardaP {
-        padding-top: 1rem;
-        font-weight: 500;
-        color: rgb(17, 17, 17);
-        display: flex;
-        justify-content: center;
-      }
-      .prContentProgram {
-        width: 20rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        padding-top: 1rem;
-        box-sizing: border-box;
-      }
-    }
-   
       .cardProgram {
-        
+        .cardCourseImageaP {
+          width: 20rem;
+          height: 12rem;
+          box-sizing: border-box;
+        }
+        .textcardaP {
+          padding-top: 1rem;
+          font-weight: 500;
+          color: rgb(17, 17, 17);
+          display: flex;
+          justify-content: center;
+        }
+        .prContentProgram {
+          width: 20rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          padding-top: 1rem;
+          box-sizing: border-box;
+        }
+      }
+
+      .cardProgram {
         transition: transform 0.3s ease;
         &:hover {
           transform: translateY(-14px);
           cursor: pointer;
         }
       }
-      .enrollP
-      {
-        color:  #ea7b30;
+      .enrollP {
+        color: #ea7b30;
         display: flex;
         flex-direction: row;
-        gap:4px;
+        gap: 4px;
         align-items: center;
         font-size: 1.1rem;
         padding-top: 1rem;
         font-weight: 500;
         padding-left: 1rem;
       }
-      .enrollP:hover
-      {
+      .enrollP:hover {
         color: #4f1930;
         cursor: pointer;
-        
       }
     }
   }
