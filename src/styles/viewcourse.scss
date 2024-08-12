@@ -3,78 +3,82 @@
   padding-top: 8rem;
   padding-left: 5rem;
   padding-right: 5rem;
-}
 
-.sidebar {
-  width: 20%; // Sidebar takes up 20% of the container width
-  background-color: #f4f4f4; // Light background for the sidebar
-  padding: 1rem;
-  border-right: 2px solid #ddd; // Border to separate sidebar from content
+  .sidebar {
+    width: 20%; // Sidebar takes up 20% of the container width
+    background-color: #f4f4f4; // Light background for the sidebar
+    padding: 1rem;
+    border-right: 2px solid #ddd; // Border to separate sidebar from content
+    position: fixed;
 
-  ul {
-    list-style-type: none;
-    padding: 0;
+    ul {
+      list-style-type: none;
+      padding: 0;
 
-    li {
-      padding: 1rem;
-      margin-bottom: 1rem;
-      background-color: #ffffff;
-      border-radius: 4px;
-      cursor: pointer;
-      text-align: center;
-      transition: background-color 0.3s, color 0.3s;
+      li {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        background-color: #ffffff;
+        border-radius: 4px;
+        cursor: pointer;
+        align-items: center;
+        font-size: 1.1rem;
+        transition: background-color 0.3s, color 0.3s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
-      &:hover {
-        background-color: #007bff;
-        color: #ffffff;
+        &:hover {
+          background-color: #ea7b30;
+          color: #ffffff;
+        }
       }
     }
-  }
-}
+    .complete {
+      margin-top: 20px;
+      padding: 10px;
+      .completionContent {
+        padding-bottom: 1rem;
+        font-size: 1.1rem;
+      }
 
-.content {
-  width: 80%; // Content takes up 80% of the container width
-  padding: 2rem;
-  background-color: #ffffff; // White background for content area
+      .progress-bar {
+        background-color: #ea7b30;
+      }
 
-  .video {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
-  }
-
-  .documents {
-    display: flex;
-    flex-direction: column;
-
-    a {
-      padding: 0.5rem 0;
-      color: #007bff;
-      text-decoration: none;
-      transition: color 0.3s;
-
-      &:hover {
-        color: #0056b3;
+      .progress {
+        height: 20px; // Set the height of the progress bar
       }
     }
   }
 
-  .courseContent {
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
-  .complete {
-    margin-top: 20px;
-    padding: 10px;
-  }
+  .contentView {
+    width: 80%; // Content takes up 80% of the container width
+    padding: 2rem;
+    background-color: #ffffff; // White background for content area
+    margin-left: 16rem;
 
-  .progress-bar {
-    background-color: #4caf50; // Customize the color of the progress bar
-  }
+    .video {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
 
-  .progress {
-    height: 20px; // Set the height of the progress bar
+    .documents {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        padding: 0.5rem 0;
+        color: #ea7b30;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+    }
+
+    .courseContent {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
   }
 }

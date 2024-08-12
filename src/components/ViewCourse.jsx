@@ -135,13 +135,13 @@ function ViewCourse() {
           <li onClick={() => handleSectionClick("content")}>Content</li>
         </ul>
         <div className="complete">
-          <div>Course Progress: {completion}%</div>
+          <div className="completionContent">Course Progress: {completion}%</div>
           <ProgressBar now={completion} label={`${completion}%`} />
         </div>
       </div>
 
       {/* Main Content Area */}
-      <div className="content">
+      <div className="contentView">
         {activeSection === "video" && (
           <div>
             <video controls className="video">
