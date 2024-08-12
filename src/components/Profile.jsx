@@ -1,5 +1,6 @@
 import React from "react";
 import '../styles/profile.scss';
+import { Link } from "react-router-dom";
 function Profile() {
   function Logout() {
     localStorage.removeItem("userToken");
@@ -9,7 +10,9 @@ function Profile() {
   return (
     <div className="overlay">
       <div className="profile">
-        <div>Dashboard</div>
+        <Link to="/StudentCourse">
+          <div>Dashboard</div>
+        </Link>
         <div>Account</div>
         <div>Support</div>
         <div onClick={Logout}>Sign out</div>

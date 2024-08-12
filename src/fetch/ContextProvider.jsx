@@ -1,13 +1,11 @@
 import { useContext, useEffect, useState, createContext } from "react";
 import axios from "axios";
 
-
 // Create context
 const statement = createContext();
 
 export const Appcontext = ({ children }) => {
   const [program, setProgram] = useState([]);
-  const [pcourse, setPcourse] = useState([]);
 
   useEffect(() => {
     const getprogram = async () => {
@@ -24,13 +22,8 @@ export const Appcontext = ({ children }) => {
     getprogram();
   }, []);
 
-  
- 
-
- 
-
   return (
-    <statement.Provider value={{ program, setProgram, pcourse, setPcourse }}>
+    <statement.Provider value={{ program, setProgram }}>
       {children}
     </statement.Provider>
   );

@@ -1,41 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../styles/landing.scss";
 import Writer from "./Writer";
-
+import { mycontext } from "../fetch/ContextProvider";
 function Landing() {
-  const courses = [
-    {
-      courseImage: "/C1.jpeg",
-      buttonTitle: "Coding",
-      programContent:
-        "Robotics is a fascinating educational tool that brings to life abstract concepts in Science, Technology, Engineering, & Mathematics. Students learn to build intricate robots to solve complex challenges, acquire technical, scientific, & other skills that are critical to be successful in the 21st century such as deep-thinking, problem-solving, creativity, teamwork, communication & collaboration.",
-    },
-    {
-      courseImage: "/ro1.jpg",
-      buttonTitle: "Robotics",
-      programContent:
-        "Robotics is a fascinating educational tool that brings to life abstract concepts in Science, Technology, Engineering, & Mathematics. Students learn to build intricate robots to solve complex challenges, acquire technical, scientific, & other skills that are critical to be successful in the 21st century such as deep-thinking, problem-solving, creativity, teamwork, communication & collaboration.",
-    },
-    {
-      courseImage: "/pr1.jpg",
-      buttonTitle: "3D Designing & 3D Printing",
-      programContent:
-        "Robotics is a fascinating educational tool that brings to life abstract concepts in Science, Technology, Engineering, & Mathematics. Students learn to build intricate robots to solve complex challenges, acquire technical, scientific, & other skills that are critical to be successful in the 21st century such as deep-thinking, problem-solving, creativity, teamwork, communication & collaboration.",
-    },
-    {
-      courseImage: "/P1.jpg",
-      buttonTitle: "Electronics & Embedded Systems",
-      programContent:
-        "Robotics is a fascinating educational tool that brings to life abstract concepts in Science, Technology, Engineering, & Mathematics. Students learn to build intricate robots to solve complex challenges, acquire technical, scientific, & other skills that are critical to be successful in the 21st century such as deep-thinking, problem-solving, creativity, teamwork, communication & collaboration.",
-    },
-    {
-      courseImage: "/R1.jpeg",
-      buttonTitle: "Mathematics of Problems Solving",
-      programContent:
-        "Robotics is a fascinating educational tool that brings to life abstract concepts in Science, Technology, Engineering, & Mathematics. Students learn to build intricate robots to solve complex challenges, acquire technical, scientific, & other skills that are critical to be successful in the 21st century such as deep-thinking, problem-solving, creativity, teamwork, communication & collaboration.",
-    },
-  ];
 
+   const { program } = mycontext();
+   
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const cardsPerPage = 3;
   const autoScrollInterval = 10000; // 15 second
@@ -50,18 +20,18 @@ function Landing() {
   }, []);
 
   const nextCard = () => {
-    setCurrentCardIndex((prevIndex) => (prevIndex + 1) % courses.length);
+    setCurrentCardIndex((prevIndex) => (prevIndex + 1) % program.length);
   };
 
-  const visibleCards = courses.slice(
+  const visibleCards = program.slice(
     currentCardIndex,
     currentCardIndex + cardsPerPage
   );
   if (visibleCards.length < cardsPerPage) {
-    visibleCards.push(...courses.slice(0, cardsPerPage - visibleCards.length));
+    visibleCards.push(...program.slice(0, cardsPerPage - visibleCards.length));
   }
 
-  const totalPages = Math.ceil(courses.length / cardsPerPage);
+  const totalPages = Math.ceil(program.length / cardsPerPage);
 
   const handleDotClick = (pageIndex) => {
     setCurrentCardIndex(pageIndex * cardsPerPage);
@@ -113,7 +83,9 @@ function Landing() {
         <div className="textLa">
           <div>Welcome to Future Focus Rwanda</div>
           <div>
-          <div><Writer/></div>  
+            <div>
+              <Writer />
+            </div>
           </div>
         </div>
         <div className="textLb">
@@ -131,9 +103,9 @@ function Landing() {
             {visibleCards.map((item, index) => (
               <div key={index} className="card">
                 <div>
-                  <img src={item.courseImage} className="cardCourseImagea" />
+                  <img src={item.images} className="cardCourseImagea" />
                 </div>
-                <div className="textcarda">{item.buttonTitle}</div>
+                <div className="textcarda">{item.program_title}</div>
                 <div className="prContent">{item.programContent}</div>
               </div>
             ))}
@@ -155,8 +127,8 @@ function Landing() {
       <div className="ctitle">Join Us For</div>
       <div className="landingc">
         {cardServices.map((item, index) => (
-          <div  className="landccards" key={index}>
-            <div >
+          <div className="landccards" key={index}>
+            <div>
               <img
                 src={item.cardImage}
                 alt="card images"

@@ -34,6 +34,36 @@
     padding-top: 2rem;
 
     .cardPrograms {
+      padding-bottom: 3rem;
+      .programDetails {
+        font-size: 1.1rem;
+        font-weight: 500;
+        border-left: solid 2px #ea7b30;
+        padding-left: 1rem;
+        .stylep {
+          color: #ea7b30;
+        }
+      }
+      .imagecontent {
+        display: flex;
+        flex-direction: row;
+        padding-top: 2rem;
+
+        gap: 5rem;
+        .single_image {
+          width: 30rem;
+          height: 20rem;
+        }
+
+        .content {
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          padding: 1rem;
+          border-radius: 5px;
+          width: 25rem;
+          display: flex;
+          text-align: center;
+        }
+      }
     }
   }
 }

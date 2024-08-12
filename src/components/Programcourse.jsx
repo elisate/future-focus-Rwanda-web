@@ -2,17 +2,30 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../styles/programcourse.scss";
+import { useNavigate } from "react-router-dom";
 
 function Programcourse() {
   const { Pid } = useParams();
   const [program, setProgram] = useState({});
-  const [pcourse, setPcourse] = useState([]);
+
+  const navigate = useNavigate();
+  const navigateRegistration = (id) => {
+    navigate(`/studentregistration/${id}`);
+  };
+
 
   useEffect(() => {
     const singleProgram = async () => {
+       const userToken = JSON.parse(localStorage.getItem("userToken"));
+       // Access the accessToken within the nested tokens object
+       const token = userToken?.user?.tokens?.accessToken;
+       console.log("Access Token:", token);
+
+     
       try {
         const res = await axios.get(
-          `http://localhost:5000/program/getProgramById/${Pid}`
+          `http://localhost:5000/program/getProgramById/${Pid}`,
+          { headers: { Authorization: `Bearer ${token}` } }
         );
         console.log(res.data);
         setProgram(res.data);
@@ -23,21 +36,7 @@ function Programcourse() {
     singleProgram();
   }, [Pid]);
 
-  useEffect(() => {
-    const getprogramCourse = async () => {
-      try {
-        const response = await axios.get(
-          `http://localhost:5000/program/getProgramWithCourses/${Pid}`
-        );
-        console.log(response.data);
-        setPcourse(response.data.courses || []);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getprogramCourse();
-  }, [Pid]);
-
+  
   return (
     <div className="allPrograms">
       <div
@@ -51,15 +50,30 @@ function Programcourse() {
           width: "100%",
         }}
       >
-        <div className="programatitle" >{program?.program_title}</div>
-        <div className="endriver"><button type="submit" className="enrollbutton">enroll</button></div>
+        <div className="programatitle">{program?.program_title}</div>
+        <div className="endriver">
+          <button type="submit" className="enrollbutton" 
+           onClick={() => navigateRegistration(Pid)}
+          >
+            enroll
+          </button>
+        </div>
       </div>
       <div className="programCourseContainer">
         <div className="cardPrograms">
-          <h3>
-            <b>Program Details</b>
-          </h3>
-         
+          <div className="programDetails">
+            Program Details For{" "}
+            <span className="stylep">{program?.program_title}</span>
+          </div>
+
+          <div className="imagecontent">
+            <img
+              src={program.images}
+              alt="Program image"
+              className="single_image"
+            />
+            <div className="content">{program.programContent}</div>
+          </div>
         </div>
       </div>
     </div>

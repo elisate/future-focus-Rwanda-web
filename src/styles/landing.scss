@@ -44,6 +44,7 @@
     }
     .textb {
       font-size: 1.5rem;
+      padding-bottom: 2em;
     }
     .mappedCategories {
       .cardsContainer {
@@ -58,26 +59,28 @@
         &:hover {
           transform: translateY(-14px);
           cursor: pointer;
+          text-decoration: none;
         }
       }
       .cardCourseImagea {
-        padding-top: 3rem;
+        // padding-top: 3rem;
         width: 20rem;
         height: 12rem;
+        box-sizing: border-box;
       }
       .textcarda {
         padding-top: 1rem;
-
         font-weight: 500;
         color: rgb(17, 17, 17);
         display: flex;
         justify-content: center;
       }
       .prContent {
-        width: 18rem;
+        width: 20rem;
         padding-left: 1rem;
         padding-right: 1rem;
         padding-top: 1rem;
+        box-sizing: border-box;
       }
     }
     //pagination content
