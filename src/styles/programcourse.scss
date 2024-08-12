@@ -55,13 +55,39 @@
           height: 20rem;
         }
 
-        .content {
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          padding: 1rem;
-          border-radius: 5px;
-          width: 25rem;
+        .enrollContentButton {
           display: flex;
-          text-align: center;
+          flex-direction: column;
+          gap: 0.5rem;
+          .contentCourse {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            border-radius: 5px;
+            width: 28rem;
+            height: 17rem;
+          }
+          .ENFIX {
+            padding-left: 1rem;
+            .enrollFinalbutton {
+              background-color: #ea7b30;
+              color: white;
+              border-radius: 8px;
+              border: 1px solid transparent;
+              padding: 0.6em 1.2em;
+              font-size: 1em;
+              font-family: inherit;
+              cursor: pointer;
+              transition: border-color 0.25s;
+
+              display: flex; 
+              justify-content: center; 
+              align-items: center; 
+              text-align: center;
+            }
+            .enrollFinalbutton:hover {
+              background-color: #4f1930;
+            }
+          }
         }
       }
     }
