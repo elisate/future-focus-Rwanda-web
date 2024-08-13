@@ -22,7 +22,7 @@ function ViewCourse() {
     const getCourse = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/student/student/course/${courseId}`,
+          `https://future-focus-rwanada.onrender.com/student/student/course/${courseId}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -43,7 +43,7 @@ function ViewCourse() {
     const getProgress = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/progress/${userToken.user._id}/${courseId}`,
+          `https://future-focus-rwanada.onrender.com/progress/${userToken.user._id}/${courseId}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -105,7 +105,7 @@ function ViewCourse() {
     // Update progress on the backend
     try {
       await axios.post(
-        "http://localhost:5000/progress/update",
+        "https://future-focus-rwanada.onrender.com/progress/update",
         {
           studentId: userToken.user._id,
           courseId,

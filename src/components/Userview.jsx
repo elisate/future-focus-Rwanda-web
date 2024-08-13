@@ -23,7 +23,7 @@ function UserDashboard() {
       console.log(token);
       try {
         const response = await axios.get(
-          "http://localhost:5000/student/student/courses",
+          "https://future-focus-rwanada.onrender.com/student/student/courses",
           {
             headers: {
               "Content-Type": "application/json",

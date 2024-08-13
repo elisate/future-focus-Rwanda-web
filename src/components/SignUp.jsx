@@ -26,7 +26,7 @@ const navigate = useNavigate();
       formData.append("password", password);
 
       const res = await axios.post(
-        "http://localhost:5000/user/register",
+        "https://future-focus-rwanada.onrender.com/user/register",
         formData,
         {
           headers: {
@@ -43,7 +43,7 @@ const navigate = useNavigate();
     }
   };
   return (
-    <div className="signupholder">
+    <div className="signupholderSpecific">
       <div className="signupContainer">
         <form onSubmit={handleSubmit(onsubmit)}>
           <div className="headt">

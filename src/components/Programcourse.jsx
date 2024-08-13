@@ -23,7 +23,7 @@ function Programcourse() {
 
       try {
         const res = await axios.get(
-          `http://localhost:5000/program/getProgramById/${Pid}`,
+          `https://future-focus-rwanada.onrender.com/program/getProgramById/${Pid}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         console.log(res.data);

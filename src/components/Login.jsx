@@ -26,7 +26,7 @@ function Login() {
       formData.append("password", password);
 
       const res = await axios.post(
-        "http://localhost:5000/user/login",
+        "https://future-focus-rwanada.onrender.com/user/login",
         formData,
         {
           headers: {
@@ -42,7 +42,7 @@ function Login() {
     }
   };
   return (
-    <div className="loginController">
+    <div className="loginControllerSpecific">
       <form className="loginContainer" onSubmit={handleSubmit(onsubmit)}>
         <div className="headtt">
           <div>

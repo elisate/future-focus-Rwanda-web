@@ -11,7 +11,7 @@ export const Appcontext = ({ children }) => {
     const getprogram = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/program/getPrograms"
+          "https://future-focus-rwanada.onrender.com/program/getPrograms"
         );
         console.log(response.data);
         setProgram(response.data);

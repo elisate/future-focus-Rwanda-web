@@ -26,7 +26,7 @@ function StudentRegistration() {
       const token = userToken?.user?.tokens?.accessToken;
       try {
         const res = await axios.get(
-          `http://localhost:5000/program/getProgramById/${Pid}`,
+          `https://future-focus-rwanada.onrender.com/program/getProgramById/${Pid}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         console.log(res.data);
@@ -68,7 +68,7 @@ function StudentRegistration() {
       formData.append("student_district", student_district);
 
       const res = await axios.post(
-        "http://localhost:5000/student/studentRegister",
+        "https://future-focus-rwanada.onrender.com/student/studentRegister",
         formData,
         {
           headers: {
