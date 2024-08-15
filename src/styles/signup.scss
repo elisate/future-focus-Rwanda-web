@@ -40,6 +40,10 @@
         display: flex;
         flex-direction: column;
         margin-bottom: 1rem;
+        .errorText
+        {
+          color: red;
+        }
 
         label {
           font-weight: 400;
@@ -78,6 +82,11 @@
       flex-direction: column;
       width: 100%;
       margin-bottom: 1rem;
+      .errorText
+      {
+        color: red;
+      }
+
 
       label {
         font-weight: bold;
