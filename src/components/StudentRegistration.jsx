@@ -1,17 +1,21 @@
 import React from "react";
 import "../styles/studentregistration.scss";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { Notify } from "notiflix";
+
 function StudentRegistration() {
   const { Pid } = useParams();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
+    reset, // Import reset from useForm to clear the form after submission
     formState: { errors },
   } = useForm();
-  console.log(errors);
+
   const [program, setProgram] = useState({});
   const userToken = JSON.parse(localStorage.getItem("userToken"));
   const fname = userToken?.user?.firstname;
@@ -21,15 +25,12 @@ function StudentRegistration() {
   useEffect(() => {
     const singleProgram = async () => {
       const userToken = JSON.parse(localStorage.getItem("userToken"));
-
-      // Access the accessToken within the nested tokens object
       const token = userToken?.user?.tokens?.accessToken;
       try {
         const res = await axios.get(
           `https://future-focus-rwanada.onrender.com/program/getProgramById/${Pid}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
-        console.log(res.data);
         setProgram(res.data);
       } catch (error) {
         console.log("fetching errors", error);
@@ -38,38 +39,14 @@ function StudentRegistration() {
     singleProgram();
   }, [Pid]);
 
-
   const onsubmit = async (data) => {
-     const userToken = JSON.parse(localStorage.getItem("userToken"));
+    const userToken = JSON.parse(localStorage.getItem("userToken"));
+    const token = userToken?.user?.tokens?.accessToken;
 
-     // Access the accessToken within the nested tokens object
-     const token = userToken?.user?.tokens?.accessToken;
-    console.log(data);
-    const {
-      student_firstname,
-      student_lastname,
-      student_email,
-      program_enrolled_in,
-      student_gender,
-      student_level_of_education,
-      student_country,
-      student_district,
-    } = data;
     try {
-      const formData = new FormData();
-
-      formData.append("student_firstname", student_firstname);
-      formData.append("student_lastname", student_lastname);
-      formData.append("student_email", student_email);
-      formData.append("program_enrolled_in", program_enrolled_in);
-      formData.append("student_gender", student_gender);
-      formData.append("student_level_of_education", student_level_of_education);
-      formData.append("student_country", student_country);
-      formData.append("student_district", student_district);
-
       const res = await axios.post(
         "https://future-focus-rwanada.onrender.com/student/studentRegister",
-        formData,
+        data, // Send the data directly
         {
           headers: {
             "Content-Type": "application/json",
@@ -77,12 +54,22 @@ function StudentRegistration() {
           },
         }
       );
-      localStorage.setItem("userToken", JSON.stringify(res.data));
+
+      // Show success notification
+      Notify.success("Registration successful!");
+
+      // Clear the form fields
+      reset();
+
+      // Optionally, redirect or perform additional actions
       navigate("/landing");
     } catch (error) {
       console.log(error);
+      // Show error notification
+      Notify.failure("Registration failed! Please try again.");
     }
   };
+
   return (
     <div className="regContainer">
       <div className="text">

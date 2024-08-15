@@ -54,7 +54,7 @@
         padding-bottom: 2rem;
       }
 
-      .card {
+      .card{
         transition: transform 0.3s ease;
         &:hover {
           transform: translateY(-14px);
@@ -80,6 +80,7 @@
         padding-left: 1rem;
         padding-right: 1rem;
         padding-top: 1rem;
+        padding-bottom: 1rem;
         box-sizing: border-box;
       }
     }

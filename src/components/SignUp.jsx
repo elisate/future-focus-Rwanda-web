@@ -1,29 +1,29 @@
 import React from "react";
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 import "../styles/signup.scss";
-import '../styles/button.scss';
+import "../styles/button.scss";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { Notify } from "notiflix";
 
 function SignUp() {
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  console.log(errors);
 
-  const onsubmit = async (data) => {
-    console.log(data);
-    const { firstname,lastname, email, password } = data;
+  const onSubmit = async (data) => {
+    const { firstname, lastname, email, password } = data;
     try {
-      const formData = new FormData();
-      formData.append("firstname", firstname);
-       formData.append("lastname", lastname);
-      formData.append("email", email);
-      formData.append("password", password);
+      const formData = {
+        firstname,
+        lastname,
+        email,
+        password,
+      };
 
       const res = await axios.post(
         "https://future-focus-rwanada.onrender.com/user/register",
@@ -35,17 +35,26 @@ const navigate = useNavigate();
         }
       );
 
-      
+      if (res.status === 201) {
+        Notify.success("Account created successfully!");
         navigate("/login");
-     
+      } else {
+        Notify.failure("Failed to create an account. Please try again.");
+      }
     } catch (error) {
+      if (error.response && error.response.status === 400) {
+        Notify.failure("Email already exists. Please use a different email.");
+      } else {
+        Notify.failure("An error occurred. Please try again later.");
+      }
       console.log(error);
     }
   };
+
   return (
     <div className="signupholderSpecific">
       <div className="signupContainer">
-        <form onSubmit={handleSubmit(onsubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="headt">
             <div>
               <img src="logo_official.png" className="headerLogo" alt="Logo" />
@@ -61,11 +70,20 @@ const navigate = useNavigate();
                 <input
                   type="text"
                   placeholder="First name"
-                  name="firstname"
-                  {...register("firstname", { required: true })}
+                  {...register("firstname", {
+                    required: "First name is required",
+                    minLength: {
+                      value: 2,
+                      message: "First name must be at least 2 characters",
+                    },
+                  })}
                 />
               </div>
+              {errors.firstname && (
+                <span className="errorText">{errors.firstname.message}</span>
+              )}
             </div>
+
             <div className="formGroup">
               <label>Last Name</label>
               <div className="inputContainer">
@@ -73,12 +91,21 @@ const navigate = useNavigate();
                 <input
                   type="text"
                   placeholder="Last Name"
-                  name="lastname"
-                  {...register("lastname", { required: true })}
+                  {...register("lastname", {
+                    required: "Last name is required",
+                    minLength: {
+                      value: 2,
+                      message: "Last name must be at least 2 characters",
+                    },
+                  })}
                 />
               </div>
+              {errors.lastname && (
+                <span className="errorText">{errors.lastname.message}</span>
+              )}
             </div>
           </div>
+
           <div className="formRow">
             <div className="formGroup">
               <label>Email</label>
@@ -87,11 +114,20 @@ const navigate = useNavigate();
                 <input
                   type="email"
                   placeholder="Email"
-                  name="email"
-                  {...register("email", { required: true })}
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^\S+@\S+$/i,
+                      message: "Invalid email address",
+                    },
+                  })}
                 />
               </div>
+              {errors.email && (
+                <span className="errorText">{errors.email.message}</span>
+              )}
             </div>
+
             <div className="formGroup">
               <label>Password</label>
               <div className="inputContainer">
@@ -99,14 +135,23 @@ const navigate = useNavigate();
                 <input
                   type="password"
                   placeholder="Password"
-                  name="password"
-                  {...register("password", { required: true })}
+                  {...register("password", {
+                    required: "Password is required",
+                    minLength: {
+                      value: 6,
+                      message: "Password must be at least 6 characters",
+                    },
+                  })}
                 />
               </div>
+              {errors.password && (
+                <span className="errorText">{errors.password.message}</span>
+              )}
             </div>
           </div>
+
           <div>
-            <button type="submit" className="buttonFixS ">
+            <button type="submit" className="buttonFixS">
               Sign Up
             </button>
           </div>
