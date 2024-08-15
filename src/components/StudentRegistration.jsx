@@ -12,7 +12,6 @@ function StudentRegistration() {
   const {
     register,
     handleSubmit,
-    reset, // Import reset from useForm to clear the form after submission
     formState: { errors },
   } = useForm();
 
@@ -42,11 +41,32 @@ function StudentRegistration() {
   const onsubmit = async (data) => {
     const userToken = JSON.parse(localStorage.getItem("userToken"));
     const token = userToken?.user?.tokens?.accessToken;
+    const {
+      student_firstname,
+      student_lastname,
+      student_email,
+      program_enrolled_in,
+      student_gender,
+      student_level_of_education,
+      student_country,
+      student_district,
+    } = data;
 
     try {
+      const formData = new FormData();
+
+      formData.append("student_firstname", student_firstname);
+      formData.append("student_lastname", student_lastname);
+      formData.append("student_email", student_email);
+      formData.append("program_enrolled_in", program_enrolled_in);
+      formData.append("student_gender", student_gender);
+      formData.append("student_level_of_education", student_level_of_education);
+      formData.append("student_country", student_country);
+      formData.append("student_district", student_district);
+
       const res = await axios.post(
         "https://future-focus-rwanada.onrender.com/student/studentRegister",
-        data, // Send the data directly
+        formData, // Send the data directly
         {
           headers: {
             "Content-Type": "application/json",
@@ -58,11 +78,8 @@ function StudentRegistration() {
       // Show success notification
       Notify.success("Registration successful!");
 
-      // Clear the form fields
-      reset();
-
-      // Optionally, redirect or perform additional actions
-      navigate("/landing");
+      // Reload the page
+      window.location.reload();
     } catch (error) {
       console.log(error);
       // Show error notification
