@@ -5,10 +5,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Notify } from "notiflix";
-
+import { Navigate } from "react-router-dom";
 function StudentRegistration() {
   const { Pid } = useParams();
   const navigate = useNavigate();
+  
   const {
     register,
     handleSubmit,
@@ -78,8 +79,7 @@ function StudentRegistration() {
       // Show success notification
       Notify.success("Registration successful!");
 
-      // Reload the page
-      window.location.reload();
+      navigate("/studentCourse");
     } catch (error) {
       console.log(error);
       // Show error notification
