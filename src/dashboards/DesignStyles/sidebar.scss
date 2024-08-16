@@ -1,0 +1,97 @@
+.sidebarContainer {
+  border-right: solid 1.3px #636363;
+  width: 12rem;
+  position: fixed;
+  height: 100vh;
+  .rolle {
+    border-bottom: solid 1.5px #636363;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    .textrole {
+      color: #ea7b30;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+    .role {
+      font-size: 1rem;
+      font-family: 500;
+    }
+  }
+  .menusContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: #636363;
+    font-weight: 500;
+    font-size: 0.9rem;
+
+    .desc {
+      font-size: 0.8rem;
+      padding-left: 0.5rem;
+    }
+    .iconm {
+      color: #ea7b30;
+      font-size: 1.3rem;
+    }
+    .parta {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      align-items: center;
+      padding-left: 1rem;
+    }
+    .partb {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      align-items: center;
+      padding-left: 1rem;
+    }
+    .partc {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      align-items: center;
+      padding-left: 1rem;
+    }
+    .partd {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      align-items: center;
+      padding-left: 1rem;
+    }
+    .parte {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      align-items: center;
+      padding-left: 1rem;
+    }
+    .partf {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      align-items: center;
+      padding-left: 1rem;
+    }
+    .partg {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      align-items: center;
+      padding-left: 1rem;
+    }
+    .parth {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      align-items: center;
+      padding-left: 1rem;
+    }
+  }
+}

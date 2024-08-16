@@ -12,6 +12,8 @@ import Login from "./components/Login";
 import StudentRegistration from "./components/StudentRegistration";
 import ViewCourse from "./components/ViewCourse";
 import UserDashboard from "./components/Userview";
+import Dashboardlayout from "./dashboards/pages/Dashboardlayout";
+import Dashboard from "./dashboards/pages/Dashboard";
 
 
 
@@ -36,6 +38,11 @@ function App() {
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signIn" element={<SignUp />} />
+          <Route path="/" element={<Dashboardlayout/>}>
+          <Route index element={<Dashboard/>}/>
+          <Route path="/dashboard" element={<Dashboard/>}/>
+          
+          </Route>
         </Routes>
       </BrowserRouter>
     </Appcontext>

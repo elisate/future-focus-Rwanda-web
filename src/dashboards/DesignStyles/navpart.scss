@@ -1,0 +1,44 @@
+.navpartcontainer {
+  display: flex;
+  flex-direction: row;
+  gap: 0.1rem;
+  align-items: center;
+  background-color: #f5f5f5;
+  height: 5rem;
+  margin-left: 12rem;
+  position: fixed;
+   border-bottom: solid 1.3px #636363;
+   width: 85%;
+
+   padding-right: 2rem;
+
+  .menusnav {
+    flex-grow: 1;
+  }
+
+  .icon-wrapper {
+    position: relative;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    color: #333;
+
+    .badge {
+      position: absolute;
+      top: -4px; /* Adjusted to bring the badge closer to the icon */
+      right: -4px; /* Adjusted to bring the badge closer to the icon */
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 12px;
+    }
+  }
+
+  .profile {
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+  }
+}
