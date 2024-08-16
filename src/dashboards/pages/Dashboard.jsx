@@ -43,7 +43,7 @@ function Dashboard() {
           </div>
           <div className="lengthNumber">10</div>
           <div className="c2">
-            <div className="text2">registerd student</div>
+            <div className="text2">registerd students</div>
             <div className="endicon">
               <GrFormView className="sizedicon" />
             </div>
@@ -61,7 +61,7 @@ function Dashboard() {
           </div>
           <div className="lengthNumber">5</div>
           <div className="c2">
-            <div className="text2">see all programs</div>
+            <div className="text2">all programs</div>
             <div className="endicon">
               <GrFormView className="sizedicon" />
             </div>
