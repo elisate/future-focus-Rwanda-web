@@ -7,7 +7,7 @@ import { PiNotePencil } from "react-icons/pi";
 import { MdOutlinePayments } from "react-icons/md";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import { GrContactInfo } from "react-icons/gr";
-import '../DesignStyles/Sidebar.scss';
+import '../DesignStyles/side.scss';
 function Sidebar() {
 
    function Logout() {
