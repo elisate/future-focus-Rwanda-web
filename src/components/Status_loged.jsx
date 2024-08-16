@@ -37,8 +37,8 @@ const Status_loged = () => {
        
         <div>
           <div className="text-status">
-            <FaRegCircleUser
-              className="update-profile"
+            <img src="profile.png"
+              className="update-profileimg"
               onClick={handleprofile}
             />
             <div className="email" onClick={handleprofile}>

@@ -1,40 +1,31 @@
-.status-a
-{
-     .quate {
-      background-color: #ea7b30;
-  color: white;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-family: inherit;
-  cursor: pointer;
-  transition: border-color 0.25s;
-    }
-     .quate:hover
-        {
-       background-color: #4f1930;
-        }
+.status-a {
+  .quate {
+    background-color: #ea7b30;
+    color: white;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  .quate:hover {
+    background-color: #4f1930;
+  }
 }
-.logout-status
-{
-    
-    .text-status{
-      display: flex;
-      flex-direction: row;
-      gap: 0.4rem;
-         .update-profile
-    {
-        font-size: 1.7rem;
-  
+.logout-status {
+  .text-status {
+    display: flex;
+    flex-direction: row;
+    gap: 0.4rem;
+    .update-profileimg {
+      width: 35px;
+      height: 33px;
+      border-radius: 50%;
     }
-   
-    }
-    .drop-down-status
-    {
-  font-size: 1.7rem;
-    }
-   
+  }
+  .drop-down-status {
+    font-size: 1.7rem;
+  }
 }
-
-    
