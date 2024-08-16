@@ -259,4 +259,46 @@
       }
     }
   }
+  .dashboardSectionb {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 7rem;
+    .headertext {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #636363;
+    }
+    .circledivision {
+      padding-top: 2rem;
+      padding-left: 0.1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 6rem;
+      gap: 0.9rem;
+      .textCi {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #636363;
+      }
+      .text {
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: black;
+        padding-left: 3rem;
+      }
+      .progressCircle {
+        width: 100px;
+        height: 100px;
+      }
+    }
+    .chartdivision {
+      .headerstory {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #636363;
+      }
+    }
+  }
 }

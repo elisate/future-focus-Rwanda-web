@@ -6,9 +6,11 @@ import { RiUserLine } from "react-icons/ri";
 import { PiStudent } from "react-icons/pi";
 import { SiBookstack } from "react-icons/si";
 import { GrContactInfo } from "react-icons/gr";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import Chart from './Chart';
 function Dashboard() {
   return (
-    <div className='dashboardHolder'>
+    <div className="dashboardHolder">
       <div className="dashboardContainer">
         <div className="bigCard">
           <div className="c1">
@@ -83,6 +85,32 @@ function Dashboard() {
               <GrFormView className="sizedicon" />
             </div>
           </div>
+        </div>
+      </div>
+      <div className="dashboardSectionb">
+        <div>
+        <div className='headertext'>Latest Student Progress</div>
+        <div className='circledivision'>
+          <div className="progressCircle">
+            <CircularProgressbar
+              value="75"
+              text="75%"
+              styles={buildStyles({
+                textColor: "#636363",
+                pathColor: "#93CAAB",
+                trailColor: "#e0e0e0",
+                textSize: "16px",
+                pathTransitionDuration: 0.5,
+              })}
+            />
+          </div>
+          <div className='textCi'>Available Student</div>
+          <div className='text'>70</div>
+        </div>
+        </div>
+        < div className='chartdivision'>
+        <div className='headerstory'>Registration History</div>
+        <Chart/>
         </div>
       </div>
     </div>
