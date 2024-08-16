@@ -9,6 +9,12 @@ import { RiLogoutCircleRLine } from "react-icons/ri";
 import { GrContactInfo } from "react-icons/gr";
 import '../DesignStyles/Sidebar.scss';
 function Sidebar() {
+
+   function Logout() {
+     localStorage.removeItem("userToken");
+     window.location.href = "/";
+   }
+
   return (
     <div className="sidebarContainer">
       <div className='rolle'>
@@ -48,7 +54,9 @@ function Sidebar() {
           <div>Courses</div>
         </div>
         <div className='desc'>AUTHENTICATION</div>
-        <div className="parth">
+        <div className="parth"
+        onClick={Logout}
+        >
           <RiLogoutCircleRLine className="iconm" />
           <div>Logout</div>
         </div>

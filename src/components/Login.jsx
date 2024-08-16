@@ -15,36 +15,46 @@ function Login() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (data) => {
-    const { email, password } = data;
-    try {
-      const res = await axios.post(
-        "https://future-focus-rwanada.onrender.com/user/login",
-        { email, password },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+ const onSubmit = async (data) => {
+   const { email, password } = data;
+   try {
+     const res = await axios.post(
+       "https://future-focus-rwanada.onrender.com/user/login",
+       { email, password },
+       {
+         headers: {
+           "Content-Type": "application/json",
+         },
+       }
+     );
 
-      if (res.status === 200) {
-        Notify.success("Login successful!");
-        localStorage.setItem("userToken", JSON.stringify(res.data));
-        navigate("/landing");
-      } else {
-        Notify.failure("Login failed. Please check your credentials.");
-      }
-    } catch (error) {
-      if (error.response && error.response.status === 401) {
-        Notify.failure("Invalid credentials. Please try again.");
-      } else if (error.response && error.response.status === 404) {
-        Notify.failure("User not found. Please sign up.");
-      } else {
-        Notify.failure("An error occurred. Please try again later.");
-      }
-    }
-  };
+     if (res.status === 200) {
+       Notify.success("Login successful!");
+      const userToken = res.data;
+      localStorage.setItem("userToken", JSON.stringify(userToken));
+
+      // Access the role from the stored userToken
+      const role = userToken.user.role;
+
+       // Check the user's role and navigate accordingly
+       if (role === "isAdmin") {
+         navigate("/dashboard");
+       } else {
+         navigate("/landing");
+       }
+     } else {
+       Notify.failure("Login failed. Please check your credentials.");
+     }
+   } catch (error) {
+     if (error.response && error.response.status === 401) {
+       Notify.failure("Invalid credentials. Please try again.");
+     } else if (error.response && error.response.status === 404) {
+       Notify.failure("User not found. Please sign up.");
+     } else {
+       Notify.failure("An error occurred. Please try again later.");
+     }
+   }
+ };
 
   return (
     <div className="loginControllerSpecific">
