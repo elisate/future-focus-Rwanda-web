@@ -12,7 +12,7 @@ function Footer() {
   return (
     <div className="footerContainer">
       <div className="textBig">TOGETHER WE SHAPE YOUR FUTURE</div>
-      <hr className="hrlines" />
+      <hr className="hrlines"/>
       <div className="footersuperContainer">
         <div className="footera">
           <div className="fa1">Find Us</div>

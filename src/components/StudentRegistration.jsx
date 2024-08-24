@@ -5,11 +5,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Notify } from "notiflix";
-import { Navigate } from "react-router-dom";
+
 function StudentRegistration() {
   const { Pid } = useParams();
   const navigate = useNavigate();
-  
+
   const {
     register,
     handleSubmit,
@@ -24,7 +24,6 @@ function StudentRegistration() {
 
   useEffect(() => {
     const singleProgram = async () => {
-      const userToken = JSON.parse(localStorage.getItem("userToken"));
       const token = userToken?.user?.tokens?.accessToken;
       try {
         const res = await axios.get(
@@ -40,7 +39,6 @@ function StudentRegistration() {
   }, [Pid]);
 
   const onsubmit = async (data) => {
-    const userToken = JSON.parse(localStorage.getItem("userToken"));
     const token = userToken?.user?.tokens?.accessToken;
     const {
       student_firstname,
@@ -67,7 +65,7 @@ function StudentRegistration() {
 
       const res = await axios.post(
         "https://future-focus-rwanada.onrender.com/student/studentRegister",
-        formData, // Send the data directly
+        formData,
         {
           headers: {
             "Content-Type": "application/json",
@@ -76,13 +74,11 @@ function StudentRegistration() {
         }
       );
 
-      // Show success notification
       Notify.success("Registration successful!");
 
       navigate("/studentCourse");
     } catch (error) {
       console.log(error);
-      // Show error notification
       Notify.failure("Registration failed! Please try again.");
     }
   };
@@ -104,36 +100,65 @@ function StudentRegistration() {
             <input
               type="text"
               name="student_firstname"
-              value={fname}
-              {...register("student_firstname", { required: true })}
+              {...register("student_firstname", {
+                required: true,
+                validate: (value) =>
+                  value === fname || "First name must match the logged-in user",
+              })}
             />
+            {errors.student_firstname && (
+              <p className="error-message">
+                {errors.student_firstname.message}
+              </p>
+            )}
           </div>
           <div className="form-group">
             <label className="labeling">Last Name</label>
             <input
               type="text"
               name="student_lastname"
-              value={lname}
-              {...register("student_lastname", { required: true })}
+              {...register("student_lastname", {
+                required: true,
+                validate: (value) =>
+                  value === lname || "Last name must match the logged-in user",
+              })}
             />
+            {errors.student_lastname && (
+              <p className="error-message">{errors.student_lastname.message}</p>
+            )}
           </div>
           <div className="form-group">
             <label className="labeling">Email</label>
             <input
               type="email"
               name="student_email"
-              value={Email}
-              {...register("student_email", { required: true })}
+              {...register("student_email", {
+                required: true,
+                validate: (value) =>
+                  value === Email || "Email must match the logged-in user",
+              })}
             />
+            {errors.student_email && (
+              <p className="error-message">{errors.student_email.message}</p>
+            )}
           </div>
           <div className="form-group">
             <label className="labeling">Program Enrolled In</label>
             <input
               type="text"
               name="program_enrolled_in"
-              value={program.program_title}
-              {...register("program_enrolled_in", { required: true })}
+              {...register("program_enrolled_in", {
+                required: true,
+                validate: (value) =>
+                  value === program.program_title ||
+                  `Program must match the selected program: ${program.program_title}`,
+              })}
             />
+            {errors.program_enrolled_in && (
+              <p className="error-message">
+                {errors.program_enrolled_in.message}
+              </p>
+            )}
           </div>
 
           <div className="form-group">
